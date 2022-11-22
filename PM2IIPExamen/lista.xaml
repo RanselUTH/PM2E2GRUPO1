@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2IIPExamen.lista"
+             Visual="Material"
+             Background="#D3DAE3">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="5" CornerRadius="0">
+                <Label Text="Lista De Sitios" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Image Source="paisajes.gif" x:Name="imgFoto" WidthRequest="200" HeightRequest="200" IsVisible="false" />
+
+
+            <ListView   x:Name="ListaEmpleados" ItemSelected="ListaEmpleados_ItemSelected" HeightRequest="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout  Orientation="Vertical" >
+                                <StackLayout Orientation="Horizontal" >
+                                    
+                                        <Label Text="{Binding descripcion}" TextColor="Black"  FontSize="16" />
+                                        <Label Text="{Binding latitud}" FontSize="16"  TextColor="Black"  />
+                                        <Label Text="{Binding longitud}"  FontSize="16"  TextColor="Black" />
+
+                                    <Frame CornerRadius="0" WidthRequest="25"  BackgroundColor="#9FA49C" HasShadow="True" BorderColor="#9FA49C" IsVisible="False">
+                                    </Frame>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
